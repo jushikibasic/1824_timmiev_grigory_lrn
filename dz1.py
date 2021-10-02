@@ -5,8 +5,9 @@ if time["day"] > 0:
     result = result + str(time["day"]) +' дн '
 if time["hour"] > 0:
     result = result + str(time["hour"]) + ' час '
-if time["min"] > 0:
+if time["min"] >= 0:
     result = result + str(time["min"]) + ' мин '
-if time["sek"] > 0:
+if time["sek"] >= 0:
+
     result = result + str(time["sek"]) + ' c '
 print(result)
