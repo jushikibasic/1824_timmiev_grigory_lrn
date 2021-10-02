@@ -19,11 +19,9 @@ for value in data:
         result1 = result1 + value
 print(result1)
 print("Задание б/c):")
-order = 0
 for numb in range(len(data)):
     data[numb] = data[numb] +17
 for value in data:
-    order += 1
     summ = 0
     count = value
     while count > 0:
