@@ -1,6 +1,7 @@
 data = []
 step = 0
-order = 0
+result1 = 0
+result2 = 0
 check = None
 while step < 1000:
     if step % 2 > 0:
@@ -9,8 +10,6 @@ while step < 1000:
     step += 1
 print("Задание а):")
 for value in data:
-    check = value ** (1. / 3)
-    order += 1
     summ = 0
     count = value
     while count > 0:
@@ -18,9 +17,8 @@ for value in data:
         summ += digit
         count = count // 10
     if summ % 7 == 0:
-        print('Значение №:'+ str(order) +') равное:'+str(value), 'и являющееся кубом числа:'+ str(round(check)))
-        print('Сумма всех его знаков равна:', str(summ) +', она делится на 7 без остатка.')
-
+        result1 = result1 + value
+print(result1)
 print("Задание б/c):")
 order = 0
 for numb in range(len(data)):
@@ -34,5 +32,5 @@ for value in data:
         summ += digit
         count = count // 10
     if summ % 7 == 0:
-        print('Значение №:' + str(order) + ') равное:' + str(value))
-        print('Сумма всех его знаков равна:', str(summ) + ', она делится на 7 без остатка.')
+        result2 = result2 + value
+print(result2)
