@@ -2,7 +2,6 @@ data = []
 step = 0
 result1 = 0
 result2 = 0
-check = None
 while step < 1000:
     if step % 2 > 0:
         cube = step ** 3
