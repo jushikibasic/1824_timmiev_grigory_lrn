@@ -13,8 +13,7 @@ data = []
 step = 0
 while step < 1000:
     if step % 2 > 0:
-        cube = step ** 3
-        data.append(cube)
+        data.append(step ** 3)
     step += 1
 print("Задание а):")
 print(result_func())
