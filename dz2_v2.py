@@ -1,6 +1,6 @@
-def result_func(table):
+def result_func(list_name):
     result = 0
-    for value in table:
+    for value in list_name:
         summ = 0
         for place in str(value):
             summ += int(place)
