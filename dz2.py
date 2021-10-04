@@ -1,6 +1,6 @@
-def result_func():
+def result_func(table):
     result = 0
-    for value in data:
+    for value in table:
         summ = 0
         count = value
         while count > 0:
@@ -16,8 +16,8 @@ while step < 1000:
         data.append(step ** 3)
     step += 1
 print("Задание а):")
-print(result_func())
+print(result_func(data))
 print("Задание б/c):")
 for numb in range(len(data)):
     data[numb] += 17
-print(result_func())
+print(result_func(data))
