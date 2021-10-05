@@ -9,5 +9,5 @@ prices.sort()
 print(list_mask(prices), 'ID списка: ', id(prices))
 prices_reversed = list(reversed(prices))
 print(list_mask(prices_reversed), 'ID списка: ', id(prices_reversed))
-top_5 = prices_reversed[:5]
+top_5 = list(reversed(prices_reversed[:5]))
 print(list_mask(top_5), 'ID списка: ', id(top_5))
