@@ -19,5 +19,6 @@ for value in task_list:
         new_value = '{:02d}'.format(new)
         index = task_list.index(value)
         task_list[index] = new_value
-result = ' '.join(task_list)
-print(result)
+print(' '.join(task_list))
+
+
