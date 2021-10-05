@@ -1,11 +1,23 @@
-task_list = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
-for name in task_list:
-    new_name = ''
-    letter = ''
-    work_name = name[::-1]
-    for letter in work_name:
-        new_name += letter
-        if ord(letter) == 32:
-            new_name = new_name[::-1]
-            break
-    print('Привет,' + new_name.title() + '!')
+task_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
+task_list.reverse()
+for value in task_list:
+    if ord(value[-1]) in range(48, 58):
+        task_list.insert((task_list.index(value) + 1), '"')
+task_list.reverse()
+for value in task_list:
+    if ord(value[-1]) in range(48, 58):
+        task_list.insert((task_list.index(value) + 1), '"')
+for value in task_list:
+    if ord(value[0]) == 43 or ord(value[0]) == 45:
+        new = int(value[1:])
+        new_value = '{:02d}'.format(new)
+        index = task_list.index(value)
+        task_list[index] = value[:1] + new_value
+for value in task_list:
+    if ord(value[0]) in range(48, 58):
+        new = int(value)
+        new_value = '{:02d}'.format(new)
+        index = task_list.index(value)
+        task_list[index] = new_value
+result = ' '.join(task_list)
+print(result)
