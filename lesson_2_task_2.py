@@ -21,8 +21,3 @@ for value in task_list:
         task_list[index] = new_value
 result = ' '.join(task_list)
 print(result)
-
-
-
-
-
