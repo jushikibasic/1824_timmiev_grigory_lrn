@@ -7,4 +7,4 @@ for name in task_list:
         if ord(letter) == 32:
             new_name = new_name[::-1]
             break
-    print('Привет,' + new_name.title() + '!')
+    print("'Привет," + new_name.title() + "!'")
