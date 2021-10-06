@@ -19,6 +19,15 @@ for value in task_list:
         new_value = '{:02d}'.format(new)
         index = task_list.index(value)
         task_list[index] = new_value
-print(' '.join(task_list))
-
-
+for name in range(len(task_list)):
+    new_name = task_list[name]
+    if name == len(task_list) - 1:
+        next_name = new_name
+    else:
+        next_name = task_list[name + 1]
+    if new_name == '"' and next_name.isdigit() or next_name[-1].isdigit():
+        print(task_list[name], end='')
+    elif new_name[-1].isdigit():
+        print(task_list[name], end='')
+    else:
+        print(task_list[name], end=' ')
