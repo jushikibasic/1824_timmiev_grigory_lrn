@@ -1,11 +1,12 @@
 task_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
-def mark_placer(list_name):
-    list_name.reverse()
-    for value in list_name:
-        if ord(value[-1]) in range(48, 58):
-            list_name.insert((list_name.index(value) + 1), '"')
-mark_placer(task_list)
-mark_placer(task_list)
+task_list.reverse()
+for value in task_list:
+    if ord(value[-1]) in range(48, 58):
+        task_list.insert((task_list.index(value) + 1), '"')
+task_list.reverse()
+for value in task_list:
+    if ord(value[-1]) in range(48, 58):
+        task_list.insert((task_list.index(value) + 1), '"')
 for value in task_list:
     if ord(value[0]) in range(48, 58):
         new = int(value)
