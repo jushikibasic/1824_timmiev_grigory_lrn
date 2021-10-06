@@ -3,6 +3,8 @@ def list_mask(list_name):
     for price in list_name:
         result += f'{int(price)} руб {int(round((price - int(price)) * 100)):02d} коп, '
     return result
+
+
 prices = [844.32, 1523.54, 467.17, 235.85, 614.72, 1436.4, 651.85, 1625.0, 321.81, 452.03]
 print(list_mask(prices), 'ID списка: ', id(prices))
 prices.sort()
