@@ -25,7 +25,7 @@ for name in range(len(task_list)):
         next_name = new_name
     else:
         next_name = task_list[name + 1]
-    if new_name == '"' and next_name.isdigit() or next_name[-1].isdigit():
+    if new_name == '"' and next_name[-1].isdigit():
         print(task_list[name], end='')
     elif new_name[-1].isdigit():
         print(task_list[name], end='')
