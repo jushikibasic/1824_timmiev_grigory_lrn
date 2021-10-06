@@ -1,7 +1,6 @@
 task_list = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
 for name in task_list:
     new_name = ''
-    letter = ''
     work_name = name[::-1]
     for letter in work_name:
         new_name += letter
