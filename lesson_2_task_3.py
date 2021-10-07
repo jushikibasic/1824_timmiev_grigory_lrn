@@ -24,5 +24,8 @@ for name in range(len(task_list)):
         print(task_list[name], end='')
     elif new_name[-1].isdigit():
         print(task_list[name], end='')
+    elif new_name == next_name:
+        print(task_list[name], end='')
     else:
         print(task_list[name], end=' ')
+
