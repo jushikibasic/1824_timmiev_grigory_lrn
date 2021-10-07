@@ -1,17 +1,17 @@
-def adv_translate(numb: str) -> None:
+def num_translate_adv(num: str) -> None:
     """переводит числительное с английского на русский """
     translate_dict = {
         'zero': 'ноль', 'one': 'один', 'two': 'два', 'three': 'три', 'four': 'четыре',
         'five': 'пять', 'six': 'шесть', 'seven': 'семь', 'eight': 'восемь', 'nine': 'девять'
     }
-    if numb[0].isupper():
-        numb = numb.lower()
-        if numb in translate_dict:
-            print(numb.capitalize(), "переводится как:", (translate_dict[numb]).capitalize())
+    if num[0].isupper():
+        num = num.lower()
+        if num in translate_dict:
+            print(num.capitalize(), "переводится как:", (translate_dict[num]).capitalize())
     else:
-        numb = numb.lower()
-        if numb in translate_dict:
-            print(numb, "переводится как:", (translate_dict[numb]))
+        num = num.lower()
+        if num in translate_dict:
+            print(num, "переводится как:", (translate_dict[num]))
 
 
-adv_translate(input('Введите английское числительное: '))
+num_translate_adv(input('Введите английское числительное: '))
