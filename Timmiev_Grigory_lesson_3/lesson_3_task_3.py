@@ -10,6 +10,11 @@ def thesaurus(*args: str) -> dict:
     return names_dictionary
 
 
-name_list = ("Иван", "Мария", "Петр", "Илья", "Маша", "Потап")
-for key, value in thesaurus(*name_list).items():
-    print(f'"{key}": {value}')
+name_list = ("Иван", "Артём", "Мария", "Петр", "Илья", "Маша", "Потап", "Алексей")
+
+
+result_dict = thesaurus(*name_list)
+list_keys = list(result_dict.keys())
+list_keys.sort()
+for i in list_keys:
+    print(f'"{i}": {result_dict[i]}')
