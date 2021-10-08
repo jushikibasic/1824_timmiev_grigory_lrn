@@ -17,3 +17,11 @@ for name in thesaurus_adv:
 #    else:
 #        names_dictionary.setdefault(name[0], [name])
 print(names_dictionary)
+
+new_dict = {"А": {"П": ["Петр Алексеев"]},
+            "С": {"И": ["Иван Сергеев", "Инна Серова"],
+                  "А": ["Анна Савельева"]
+                  }
+            }
+
+print(new_dict["С"]["И"])
