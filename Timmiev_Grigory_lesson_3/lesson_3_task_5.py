@@ -18,7 +18,7 @@ def get_jokes(count_jokes: int, no_copies=False) -> None:
         copies = len(nouns)
     if count_jokes > len(nouns) and no_copies is True:
         print('Установлено условие без повторов. '
-              'Для большего количества шуток добавьте'
+              'Для большего количества шуток добавьте '
               'значений в списки')
         count = 1
         copies = len(nouns)
