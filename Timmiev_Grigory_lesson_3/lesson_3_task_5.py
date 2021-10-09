@@ -10,11 +10,9 @@ def get_jokes(count_jokes: int, no_copies=False) -> None:
     thing_jk = []
     time_jk = []
     about_thing_jk = []
-    count = len(nouns)
+    count = count_jokes
     copies = 1
     new_result = []
-    if count_jokes > len(nouns):
-        count = count_jokes
     if no_copies is True:
         count = 1
         copies = len(nouns)
@@ -37,4 +35,4 @@ def get_jokes(count_jokes: int, no_copies=False) -> None:
 nouns = ["автомобиль", "лес", "огонь", "город", "дом", "козел"]
 adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью", "давным давно"]
 adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий", "меланхоличный"]
-get_jokes(6, True)
+get_jokes(4, True)
