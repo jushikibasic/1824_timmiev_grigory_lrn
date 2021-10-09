@@ -1,4 +1,4 @@
-def num_translate(num: str) -> None:
+def num_translate(num: str) -> str:
     """переводит числительное с английского на русский """
     translate_dict = {
         'zero': 'ноль', 'one': 'один', 'two': 'два', 'three': 'три', 'four': 'четыре',
@@ -6,7 +6,10 @@ def num_translate(num: str) -> None:
     }
     num = num.lower()
     if num in translate_dict:
-        print(num, "переводится как:", (translate_dict[num]))
+        return translate_dict[num]
+    else:
+        return None
 
 
-num_translate(input('Введите английское числительное: '))
+num_in = input('Введите английское числительное: ')
+print(num_in, "переводится как:", (num_translate(num_in)))
