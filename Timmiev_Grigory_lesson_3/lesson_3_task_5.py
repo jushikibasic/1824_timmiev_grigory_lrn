@@ -12,7 +12,7 @@ def get_jokes(count_jokes: int, no_copies=False) -> None:
     about_thing_jk = []
     count = count_jokes
     copies = 1
-    new_result = []
+    result = []
     if no_copies is True:
         count = 1
         copies = len(nouns)
@@ -27,9 +27,8 @@ def get_jokes(count_jokes: int, no_copies=False) -> None:
         time_jk.extend(random.sample(adverbs, copies))
         about_thing_jk.extend(random.sample(adjectives, copies))
     for thing, time, about in zip(thing_jk, time_jk, about_thing_jk):
-        result = list([f'{thing} {time} {about}'])
-        new_result.append(*result)
-    print(new_result[0:count_jokes])
+        result.append(f'{thing} {time} {about}')
+    print(result[0:count_jokes])
 
 
 nouns = ["автомобиль", "лес", "огонь", "город", "дом", "козел"]
