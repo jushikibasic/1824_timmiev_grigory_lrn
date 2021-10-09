@@ -11,8 +11,6 @@ def thesaurus(*args: str) -> dict:
 
 
 name_list = ("Иван", "Артём", "Мария", "Петр", "Илья", "Маша", "Потап", "Алексей")
-
-
 result_dict = thesaurus(*name_list)
 list_keys = list(result_dict.keys())
 list_keys.sort()
