@@ -10,20 +10,20 @@ def get_jokes(count_jokes: int, no_copies=False) -> None:
     thing_jk = []
     time_jk = []
     about_thing_jk = []
-    count = 5
+    count = len(nouns)
     copies = 1
     new_result = []
-    if count_jokes > 5:
+    if count_jokes > len(nouns):
         count = count_jokes
     if no_copies is True:
         count = 1
-        copies = 5
-    if count_jokes > 5 and no_copies is True:
+        copies = len(nouns)
+    if count_jokes > len(nouns) and no_copies is True:
         print('Установлено условие без повторов. '
               'Для большего количества шуток добавьте'
               'значений в списки')
         count = 1
-        copies = 5
+        copies = len(nouns)
     for step in range(count):
         thing_jk.extend(random.sample(nouns, copies))
         time_jk.extend(random.sample(adverbs, copies))
@@ -34,7 +34,7 @@ def get_jokes(count_jokes: int, no_copies=False) -> None:
     print(new_result[0:count_jokes])
 
 
-nouns = ["автомобиль", "лес", "огонь", "город", "дом"]
-adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью"]
-adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
+nouns = ["автомобиль", "лес", "огонь", "город", "дом", "козел"]
+adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью", "давным давно"]
+adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий", "меланхоличный"]
 get_jokes(2)
