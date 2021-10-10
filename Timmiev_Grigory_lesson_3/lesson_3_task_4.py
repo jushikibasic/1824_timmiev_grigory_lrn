@@ -16,9 +16,11 @@ def thesaurus_adv(*args: str) -> dict:
     return names_dictionary
 
 
+from pprint import pprint
 names_list = ("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
 result_dict = thesaurus_adv(*names_list)
 list_keys = list(result_dict.keys())
 list_keys.sort()
 for i in list_keys:
     print(f'"{i}": {result_dict[i]}')
+pprint(result_dict)
