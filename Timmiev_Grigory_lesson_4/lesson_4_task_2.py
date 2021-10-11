@@ -15,4 +15,9 @@ def currency_rates(code: str) -> float:
     return float(new_data)
 
 
-print(currency_rates(input("введите международный код валюты :")))
+
+
+if __name__ == '__main__':
+   import sys
+
+   exit(currency_rates(sys.code))
