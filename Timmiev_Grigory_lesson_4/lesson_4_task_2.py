@@ -12,5 +12,7 @@ def currency_rates(code: str) -> float:
     new_data = str(data[code]).replace(",", ".")
     return float(new_data)
 
+if __name__ == '__main__':
+   import sys
 
 print(currency_rates(input("введите международный код валюты :")))
