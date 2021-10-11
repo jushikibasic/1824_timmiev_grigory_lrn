@@ -1,7 +1,7 @@
 from cbr_parser.utils import extract_data
 
 
-def currency_rates(code: str) -> str:
+def currency_rates(code: str) -> float:
     code = code.upper()
     data = {}
     ch_code = extract_data("CharCode")
@@ -9,8 +9,8 @@ def currency_rates(code: str) -> str:
     zip_res = zip(ch_code, val)
     for name, value in zip_res:
         data.setdefault(name, value)
-    return str(data[code])
+    new_data = str(data[code]).replace(",", ".")
+    return float(new_data)
 
 
-if __name__ == '__main__':
-    currency_rates(__name__)
+print(currency_rates(input("введите международный код валюты :")))
