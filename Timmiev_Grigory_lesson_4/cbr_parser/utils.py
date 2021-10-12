@@ -1,4 +1,5 @@
-import requests
+from datetime import datetime, date, timedelta
+import requests, re
 import sys
 import typing
 from pyquery import PyQuery as pq
@@ -24,6 +25,17 @@ def extract_data(tag: str) -> typing.List:
     main_root = pq(etree.fromstring(res.content))
     curs_val = main_root.pop()
     return curs_val.xpath(f'//Valute/{tag}/text()')
+
+
+def extract_datetime():
+    """Извлекает текущую дату из данных ЦБР"""
+    res = send_request()
+    data = re.findall(r'<ValCurs Date="(.*)" name="Foreign Currency Market"', str(res.content))
+    data_parts = data[0].split(".")
+    result = [int(item) for item in data_parts]
+    day, month, year = result[0], result[1], result[2]
+    cur_date = date(day=day, month=month, year=year)
+    return cur_date
 
 
 if __name__ == '__main__':
