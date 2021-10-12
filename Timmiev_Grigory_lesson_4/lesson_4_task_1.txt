@@ -32,4 +32,6 @@ License: HPND
 Location: /home/jush/PycharmProjects/pythonProjectLn/venv/lib/python3.8/site-packages
 Requires:
 Required-by:
-(venv) jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$
+(venv) jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$ deactivate
+jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$
+
