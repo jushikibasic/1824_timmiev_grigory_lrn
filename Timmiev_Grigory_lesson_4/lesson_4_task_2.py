@@ -7,12 +7,13 @@ def currency_rates(code: str):
     ch_code = extract_data("CharCode")
     val = extract_data("Value")
     zip_res = zip(ch_code, val)
-    if code not in ch_code:
-        return None
     for name, value in zip_res:
         data.setdefault(name, value)
-    new_data = str(data[code]).replace(",", ".")
-    return float(new_data)
+    if code in data:
+        new_data = str(data[code]).replace(",", ".")
+        return float(new_data)
+    else:
+        return None
 
 
 print(currency_rates(input("введите международный код валюты :")))
