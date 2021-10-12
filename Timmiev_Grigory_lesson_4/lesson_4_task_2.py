@@ -11,7 +11,7 @@ def currency_rates(code: str):
         data.setdefault(name, value)
     if code in data:
         new_data = str(data[code]).replace(",", ".")
-        return float(new_data)
+        return round(float(new_data), 2)
     else:
         return None
 
