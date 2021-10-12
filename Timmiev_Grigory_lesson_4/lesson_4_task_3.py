@@ -11,9 +11,10 @@ def currency_rates(code: str):
         return None
     for name, value in zip_res:
         data.setdefault(name, value)
-    new_data = str(data[code]).replace(",", ".")
-    print(extract_date())
-    return float(new_data)
+    new_data = float(str(data[code]).replace(",", "."))
+    return extract_date(), new_data
 
 
-print(currency_rates(input("введите международный код валюты :")))
+val_code = input("введите международный код валюты :")
+data, cost = (currency_rates(val_code))
+print(data, cost)
