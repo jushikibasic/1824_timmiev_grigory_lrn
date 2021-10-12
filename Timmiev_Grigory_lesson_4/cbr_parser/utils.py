@@ -1,8 +1,9 @@
-from datetime import datetime, date, timedelta
-import requests, re
+from datetime import date
+import requests
+import re
 import sys
 import typing
-from pyquery import PyQuery as pq
+from pyquery import PyQuery as p_q
 from lxml import etree
 from pprint import pprint
 
@@ -22,7 +23,7 @@ def send_request() -> requests.Response:
 def extract_data(tag: str) -> typing.List:
     """Извлекает данные из соответствующего тега и возвращает список string значений"""
     res = send_request()
-    main_root = pq(etree.fromstring(res.content))
+    main_root = p_q(etree.fromstring(res.content))
     curs_val = main_root.pop()
     return curs_val.xpath(f'//Valute/{tag}/text()')
 
