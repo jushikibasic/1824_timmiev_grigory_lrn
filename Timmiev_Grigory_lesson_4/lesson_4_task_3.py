@@ -16,5 +16,5 @@ def currency_rates(code: str):
 
 
 val_code = input("введите международный код валюты :")
-data, cost = (currency_rates(val_code))
-print(data, cost)
+cur_date, cur_cost = (currency_rates(val_code))
+print(cur_date, cur_cost)
