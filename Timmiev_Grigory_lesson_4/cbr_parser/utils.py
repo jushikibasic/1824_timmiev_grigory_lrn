@@ -28,7 +28,7 @@ def extract_data(tag: str) -> typing.List:
     return curs_val.xpath(f'//Valute/{tag}/text()')
 
 
-def extract_datetime():
+def extract_date():
     """Извлекает текущую дату из данных ЦБР"""
     res = send_request()
     data = re.findall(r'<ValCurs Date="(.*)" name="Foreign Currency Market"', str(res.content))
