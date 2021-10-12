@@ -7,16 +7,15 @@ def currency_rates(code: str):
     ch_code = extract_data("CharCode")
     val = extract_data("Value")
     zip_res = zip(ch_code, val)
-    if code not in ch_code:
-        return None
     for name, value in zip_res:
         data.setdefault(name, value)
-    new_data = str(data[code]).replace(",", ".")
-    print(extract_date())
-    return float(new_data)
+    if code in data:
+        new_data = float(str(data[code]).replace(",", "."))
+        return new_data, extract_date()
+    else:
+        return None, extract_date()
 
 
 if __name__ == '__main__':
-    cur_cost = currency_rates('Name')
-    print(extract_date())
-    print(cur_cost)
+    cur_cost, cur_date = currency_rates('Name')
+    print(cur_cost, cur_date, sep=', ')
