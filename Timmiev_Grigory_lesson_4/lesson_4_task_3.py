@@ -1,4 +1,4 @@
-from cbr_parser.utils import extract_data, extract_datetime
+from cbr_parser.utils import extract_data, extract_date
 
 
 def currency_rates(code: str):
@@ -12,7 +12,7 @@ def currency_rates(code: str):
     for name, value in zip_res:
         data.setdefault(name, value)
     new_data = str(data[code]).replace(",", ".")
-    print(extract_datetime())
+    print(extract_date())
     return float(new_data)
 
 
