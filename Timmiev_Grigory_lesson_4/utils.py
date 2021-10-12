@@ -10,7 +10,7 @@ def currency_rates(code: str):
     for name, value in zip_res:
         data.setdefault(name, value)
     if code in data:
-        new_data = float(str(data[code]).replace(",", "."))
+        new_data = round(float(str(data[code]).replace(",", ".")), 2)
         return new_data, extract_date()
     else:
         return None, extract_date()
