@@ -1,3 +1,4 @@
+from cbr_parser.utils import extract_date
 from utils import currency_rates
 
 
@@ -9,5 +10,9 @@ def upg_cur_rates(argv: str):
 
 if __name__ == '__main__':
     import sys
-    cur_cost, cur_date = upg_cur_rates(sys.argv)
+    if len(sys.argv) > 1:
+        cur_cost, cur_date = upg_cur_rates(sys.argv)
+    else:
+        cur_cost = None
+        cur_date = extract_date()
     exit(print(cur_cost, cur_date, sep=', '))
