@@ -1,3 +1,4 @@
+import datetime
 from datetime import date
 import requests
 import re
@@ -28,7 +29,7 @@ def extract_data(tag: str) -> typing.List:
     return curs_val.xpath(f'//Valute/{tag}/text()')
 
 
-def extract_date():
+def extract_date() -> datetime.date:
     """Извлекает текущую дату из данных ЦБР"""
     res = send_request()
     data = re.findall(r'<ValCurs Date="(.*)" name="Foreign Currency Market"', str(res.content))
