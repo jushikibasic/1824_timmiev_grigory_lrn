@@ -13,6 +13,3 @@ tur_nam_class = ((stud, aud) for (stud, aud) in zip(tutors, klasses))
 print("tur_nam_class это:", type(tur_nam_class))
 for _ in range(0, dist):
     print(next(tur_nam_class))
-
-
-
