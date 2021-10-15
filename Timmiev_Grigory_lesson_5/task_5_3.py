@@ -7,9 +7,9 @@ dist = len(tutors)
 if dist > len(klasses):
     diff = dist - len(klasses)
     print("Для", diff, "учеников, не хватает классов.")
-    for _ in range(1, diff + 1):
+    for _ in range(0, diff):
         klasses.append(None)
 tur_nam_class = ((stud, aud) for (stud, aud) in zip(tutors, klasses))
 print("tur_nam_class это:", type(tur_nam_class))
-for _ in range(0, dist):
+for _ in range(0, dist + 1):
     print(next(tur_nam_class))
