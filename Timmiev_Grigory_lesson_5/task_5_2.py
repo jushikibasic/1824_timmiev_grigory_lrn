@@ -1,6 +1,6 @@
 def odd_nums(n: int):
     nums_gen = (num for num in range(1, n + 1, 2))
-    print(type(nums_gen))
+    print("nums_gen это:", type(nums_gen))
     for n in range(1, n + 1, 2):
         print(next(nums_gen))
 
