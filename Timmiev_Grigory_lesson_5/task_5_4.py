@@ -5,9 +5,9 @@ src = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
 start = perf_counter()
 result_2 = [src[num + 1] for num in range(len(src) - 1) if src[num] < src[num + 1]]
 print(result_2, perf_counter() - start)
-start = perf_counter()
 
 # Решение №2
+start = perf_counter()
 result = []
 for name in range(len(src)):
     new_name = src[name]
