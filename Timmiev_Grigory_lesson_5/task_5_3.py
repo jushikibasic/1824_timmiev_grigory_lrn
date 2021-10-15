@@ -11,5 +11,5 @@ if dist > len(klasses):
         klasses.append(None)
 tur_nam_class = ((stud, aud) for (stud, aud) in zip(tutors, klasses))
 print("tur_nam_class это:", type(tur_nam_class))
-for _ in range(0, dist + 1):  # + 1 чтоб генератор выдал StopIteration
+for _ in range(0, dist):  # dist + 1 чтоб генератор выдал StopIteration
     print(next(tur_nam_class))
