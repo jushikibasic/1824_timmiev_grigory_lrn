@@ -9,3 +9,5 @@ for name in range(len(src)):
     if new_name < next_name:
         result.append(next_name)
 print(result)
+#result_2 = [num for num in range(len(src)) if num == len(src) - 1]
+
