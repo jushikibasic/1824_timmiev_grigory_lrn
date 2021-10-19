@@ -1,4 +1,4 @@
-from cbr_parser.utils import extract_data
+from utils import extract_data
 
 
 def currency_rates(code: str):

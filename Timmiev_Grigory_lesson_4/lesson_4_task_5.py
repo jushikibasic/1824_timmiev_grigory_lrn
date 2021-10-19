@@ -1,5 +1,4 @@
-from cbr_parser.utils import extract_date
-from utils import currency_rates
+from utils import currency_rates, extract_date
 
 
 def upg_cur_rates(argv: str):
