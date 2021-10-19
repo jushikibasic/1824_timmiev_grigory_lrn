@@ -8,8 +8,8 @@ with open('Chache/nginx_logs.txt', 'r', encoding='utf-8') as fr:
     for item in result:
         spam_ch.append(item[0])
     from collections import Counter
-    a = Counter(spam_ch)
-    max_val = max(a.values())
-    spam_addr = list(a.keys())[list(a.values()).index(max_val)]
+    hi_scores = Counter(spam_ch)
+    max_val = max(hi_scores.values())
+    spam_addr = list(hi_scores.keys())[list(hi_scores.values()).index(max_val)]
     spam = f'адресс:{spam_addr} запросов: {max_val}'
 print(spam)
