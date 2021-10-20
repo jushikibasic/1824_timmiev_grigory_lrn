@@ -1,0 +1,37 @@
+jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn$ pip show pillow
+Name: Pillow
+Version: 8.3.2
+Summary: Python Imaging Library (Fork)
+Home-page: https://python-pillow.org
+Author: Alex Clark (PIL Fork Author)
+Author-email: aclark@python-pillow.org
+License: HPND
+Location: /usr/local/lib/python3.8/dist-packages
+Requires:
+Required-by:
+jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn$ sudo pip install pillow --upgrade
+Requirement already satisfied: pillow in /usr/local/lib/python3.8/dist-packages (8.3.2)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn$ source venv/bin/activate
+(venv) jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$ pip show pillow
+WARNING: Package(s) not found: pillow
+(venv) jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$ pip install pillow==7.1.1
+Collecting pillow==7.1.1
+  Downloading Pillow-7.1.1-cp38-cp38-manylinux1_x86_64.whl (2.1 MB)
+     |████████████████████████████████| 2.1 MB 625 kB/s
+Installing collected packages: pillow
+Successfully installed pillow-7.1.1
+(venv) jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$ pip show pillow
+Name: Pillow
+Version: 7.1.1
+Summary: Python Imaging Library (Fork)
+Home-page: https://python-pillow.org
+Author: Alex Clark (PIL Fork Author)
+Author-email: aclark@python-pillow.org
+License: HPND
+Location: /home/jush/PycharmProjects/pythonProjectLn/venv/lib/python3.8/site-packages
+Requires:
+Required-by:
+(venv) jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$ deactivate
+jush@jush-SVE1511B1RB:~/PycharmProjects/pythonProjectLn/1824_timmiev_grigory_lrn/Timmiev_Grigory_lesson_4$
+
