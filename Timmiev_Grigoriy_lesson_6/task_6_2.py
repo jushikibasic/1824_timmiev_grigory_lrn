@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def logs_parse(file):
     result = []
     with open(file, 'r', encoding='utf-8') as fr:
@@ -8,7 +11,6 @@ def logs_parse(file):
         spam_ch = []
         for item in result:
             spam_ch.append(item[0])
-        from collections import Counter
         hi_scores = Counter(spam_ch)
         max_val = max(hi_scores.values())
         spam_addr = list(hi_scores.keys())[list(hi_scores.values()).index(max_val)]
