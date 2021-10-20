@@ -26,6 +26,6 @@ def user_hobby_fn(file_1, file_2, file_3):
 users_file = 'Chache/users.csv'
 hobby_file = 'Chache/hobby.csv'
 user_hobby = 'Chache/users_hobby.txt'
-# user_hobby_fn(users_file, hobby_file, user_hobby)
+user_hobby_fn(users_file, hobby_file, user_hobby)
 
 
