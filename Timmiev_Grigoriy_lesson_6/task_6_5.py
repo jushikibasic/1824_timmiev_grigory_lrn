@@ -8,6 +8,6 @@ def cli_user_hobby(argv):
 
 if __name__ == '__main__':
     import sys
-    if len(sys.argv) == 1:
+    if len(sys.argv) != 4:
         sys.exit(3)
     exit(cli_user_hobby(sys.argv))
