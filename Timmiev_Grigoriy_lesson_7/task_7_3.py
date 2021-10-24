@@ -30,8 +30,8 @@ def sample_copy(proj_name: str = 'my_project', tmp_name: str = 'templates'):
         with open('tmp.txt', 'r', encoding='utf-8') as fr:
             for line in fr:
                 path = line.split()[0]
-                tm = line.strip().split('/')[-1]
-                names = tm.split()
+                tmp = line.strip().split('/')[-1]
+                names = tmp.split()
                 new_dir_plus = os.path.join(new_dir_templates, names[0])
                 if not os.path.exists(new_dir_plus):
                     os.mkdir(new_dir_plus)
