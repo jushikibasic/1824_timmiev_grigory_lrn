@@ -3,11 +3,21 @@ import shutil
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def sample_copy(proj_name: str = 'my_project'):
+def sample_copy(proj_name: str = 'my_project', tmp_name: str = 'tmplatess'):
+    """
+    проверяет наличие шаблонов "*.html" внутри папки "proj_name" и вложенных
+    создает внутри папки "proj_name" папку "tmp_name" и копирует в нее все
+    папки содержащие шаблоны.
+    функция не будет работать ели внутри "proj_name" уже есть папка "tmp_name"
+    необходимо задать другое имя при вызове функции.
+    :param proj_name: имя проверяемой папки
+    :param tmp_name: имя создаваемой папки с шаблонами
+    :return: None
+    """
     print(BASE_DIR)
     folder = os.path.join(BASE_DIR, proj_name)
     print(folder)
-    new_dir_templates = os.path.join(folder, 'templates')
+    new_dir_templates = os.path.join(folder, tmp_name)
     if not os.path.exists(new_dir_templates):
         os.mkdir(new_dir_templates)
         with open('tmp.txt', 'w+', encoding='utf-8') as fw:
