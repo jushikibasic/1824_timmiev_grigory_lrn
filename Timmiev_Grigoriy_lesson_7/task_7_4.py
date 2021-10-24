@@ -23,7 +23,7 @@ def counter(path: str) -> dict:
     """
     считает количество файлов в 'path' по размеру в байтах кратному 10
     :param path: имя проверяемой папки
-    :return: dict
+    :return: dict{key<размер>:value<количество>}
     """
     dictionary = {}
     for item in size_of_files(path):
