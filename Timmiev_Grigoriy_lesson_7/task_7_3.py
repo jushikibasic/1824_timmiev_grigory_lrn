@@ -35,7 +35,3 @@ def sample_copy(proj_name: str = 'my_project'):
 
 
 sample_copy()
-
-
-
-
