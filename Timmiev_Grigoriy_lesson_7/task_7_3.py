@@ -3,7 +3,7 @@ import shutil
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def sample_copy(proj_name: str = 'my_project', tmp_name: str = 'templates'):
+def sample_copy(proj_name: str = 'my_project', tmp_name: str = 'templates') -> None:
     """
     проверяет наличие шаблонов "*.html" внутри папки "proj_name" и вложенных
     создает внутри папки "proj_name" папку "tmp_name" и копирует в нее все
@@ -14,9 +14,7 @@ def sample_copy(proj_name: str = 'my_project', tmp_name: str = 'templates'):
     :param tmp_name: имя создаваемой папки с шаблонами
     :return: None
     """
-    print(BASE_DIR)
     folder = os.path.join(BASE_DIR, proj_name)
-    print(folder)
     new_dir_templates = os.path.join(folder, tmp_name)
     if not os.path.exists(new_dir_templates):
         os.mkdir(new_dir_templates)
