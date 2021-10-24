@@ -41,7 +41,8 @@ def sample_copy(proj_name: str = 'my_project', tmp_name: str = 'templates'):
                 if os.path.exists(_):
                     os.remove(_)
     else:
-        print('шаблоны уже копированны')
+        print(f'папка с именем {tmp_name} уже присутствует в корне объекта {proj_name}\n'
+              f' необходимо задать другое имя для папки с копиями шаблонов')
 
 
 sample_copy('my_project', 'templates')
