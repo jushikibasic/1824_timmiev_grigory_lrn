@@ -5,10 +5,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def sample_copy(proj_name: str = 'my_project', tmp_name: str = 'templates') -> None:
     """
-    проверяет наличие шаблонов "*.html" внутри папки "proj_name" и вложенных
-    создает внутри папки "proj_name" папку "tmp_name" и копирует в нее все
+    Проверяет наличие шаблонов "*.html" внутри папки "proj_name" и вложенных.
+    Создает внутри папки "proj_name" папку "tmp_name" и копирует в нее все
     папки содержащие шаблоны.
-    функция не будет работать ели внутри "proj_name" уже есть папка "tmp_name"
+    Функция не будет работать ели внутри "proj_name" уже есть папка "tmp_name"
     необходимо задать другое имя при вызове функции.
     :param proj_name: имя проверяемой папки
     :param tmp_name: имя создаваемой папки с шаблонами
