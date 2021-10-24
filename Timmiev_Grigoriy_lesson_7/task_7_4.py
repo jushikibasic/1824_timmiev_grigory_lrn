@@ -4,7 +4,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 folder = os.path.join(BASE_DIR, 'trash_fold')
 
 
-def size_of_files(path: str):
+def size_of_files(path: str) -> list:
+    """
+    создает список элементов типа [<размер>, <расширение>]
+    для всех файлов находящихвсе в 'path'
+    :param path: имя проверяемой папки
+    :return: list
+    """
     return_data = []
     for data in os.walk(path):
         for file in data[2]:
@@ -13,7 +19,12 @@ def size_of_files(path: str):
     return return_data
 
 
-def counter(path):
+def counter(path: str) -> dict:
+    """
+    считает количество файлов в 'path' по размеру в байтах кратному 10
+    :param path: имя проверяемой папки
+    :return: dict
+    """
     dictionary = {}
     for item in size_of_files(path):
         count = 10
