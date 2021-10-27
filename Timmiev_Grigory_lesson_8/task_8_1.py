@@ -9,8 +9,8 @@ def email_parse(email_address):
         tmp = email_address.split('@')
         return dict(zip(keys, tmp))
     else:
-        msg = f'ValueError: wrong email:{email_address}'
-        raise ValueError(msg)
+        raise ValueError(f'ValueError: wrong email: {email_address}')
 
 
 print(email_parse('someone@geekbrains.ru'))
+# print(email_parse('someone@geekbrainsru'))
