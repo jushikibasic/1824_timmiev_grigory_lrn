@@ -12,7 +12,7 @@ def type_logger(func):
                 print(f'{func.__name__}({value}: {type(value)})')
                 result.append(func(value))
             except TypeError as err:
-                print(f'{err} {item} type is {type(item)}')
+                print(f'{err} {value} type is {type(value)}')
         return result
     return abracadabra
 
