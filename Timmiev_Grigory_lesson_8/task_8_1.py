@@ -7,11 +7,10 @@ def email_parse(email_address):
     if RE_MAIL.match(email_address):
         keys = ['username', 'domain']
         tmp = email_address.split('@')
-        result = dict(zip(keys, tmp))
-        return result
+        return dict(zip(keys, tmp))
     else:
         msg = f'ValueError: wrong email:{email_address}'
         raise ValueError(msg)
 
 
-print(email_parse('someone@geekbrainsru'))
+print(email_parse('someone@geekbrains.ru'))
