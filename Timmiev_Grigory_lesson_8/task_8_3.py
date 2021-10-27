@@ -1,16 +1,18 @@
-def for_(name, fun):
-    print(f'{fun.__name__}({name}: {type(fun(name))})')
-
-
 def type_logger(func):
     def abracadabra(*args, **kwargs):
         result = []
         for item in args:
-            for_(item, func)
-            result.append(func(item))
+            try:
+                print(f'{func.__name__}({item}: {type(item)})')
+                result.append(func(item))
+            except TypeError as err:
+                print(f'{err}: "{item}"  is {type(item)}')
         for _, value in kwargs.items():
-            for_(value, func)
-            result.append(func(value))
+            try:
+                print(f'{func.__name__}({value}: {type(value)})')
+                result.append(func(value))
+            except TypeError as err:
+                print(f'{err} {item} type is {type(item)}')
         return result
     return abracadabra
 
@@ -20,5 +22,5 @@ def calc_cube(x):
     return x ** 3
 
 
-a = calc_cube(5, 6, g=3)
+a = calc_cube(5, '6', 6, g=3)
 print(*a, sep=', ')
