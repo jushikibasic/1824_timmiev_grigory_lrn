@@ -1,4 +1,8 @@
+from functools import wraps
+
+
 def type_logger(func):
+    @wraps(func)
     def abracadabra(*args, **kwargs):
         result = []
         for item in args:
