@@ -13,7 +13,6 @@ def show_sales(argv):
         if len(sys.argv) == 1:
             print(*result.values(), sep="\n")
         elif len(sys.argv) == 2:
-            print(arg)
             for i in range(int(arg[0]), lines + 1):
                 print(result[f'{i}'])
         elif len(sys.argv) == 3:
