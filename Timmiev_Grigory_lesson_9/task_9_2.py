@@ -12,7 +12,7 @@ class Road:
         """
         считает масу массу асфальта, необходимого для покрытия всей дороги в тоннах
         :param high: высота дорожного полотна в сантиметрах
-        :return: <mass> т.: str
+        :return: f'{mass} т.': str
         """
         mass = f'{int((self._width * self._length * 25 * high) / 1000)} т.'
         return mass
