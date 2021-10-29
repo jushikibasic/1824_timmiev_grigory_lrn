@@ -14,8 +14,8 @@ class Road:
         :param high: высота дорожного полотна в сантиметрах
         :return: f'{mass} т.': str
         """
-        mass = f'{int((self._width * self._length * 25 * high) / 1000)} т.'
-        return mass
+        mass = int((self._width * self._length * 25 * high) / 1000)
+        return f'{mass} т.'
 
 
 krd_msk = Road(8000, 20)
