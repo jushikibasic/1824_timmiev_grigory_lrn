@@ -19,5 +19,5 @@ class Road:
         return mass
 
 
-krd_msk = Road(8000, 20)
+krd_msk = Road(1400, 20)
 print(f'{krd_msk.mass_of_materials(5, 25)} т.')
