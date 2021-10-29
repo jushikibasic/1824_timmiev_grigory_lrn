@@ -8,15 +8,16 @@ class Road:
         self._length = length
         self._width = width
 
-    def mass_of_materials(self, high: int) -> str:
+    def mass_of_materials(self, high: int, mass_m_2: int) -> int:
         """
         считает масу массу асфальта, необходимого для покрытия всей дороги в тоннах
         :param high: высота дорожного полотна в сантиметрах
-        :return: f'{mass} т.': str
+        :param mass_m_2: масса в кг квадратного метра дороги высотой 1 см
+        :return: mass
         """
-        mass = int((self._width * self._length * 25 * high) / 1000)
-        return f'{mass} т.'
+        mass = int((self._width * self._length * mass_m_2 * high) / 1000)
+        return mass
 
 
 krd_msk = Road(8000, 20)
-print(krd_msk.mass_of_materials(5))
+print(f'{krd_msk.mass_of_materials(5, 25)} т.')
