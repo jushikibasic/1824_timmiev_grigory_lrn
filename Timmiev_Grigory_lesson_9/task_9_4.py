@@ -4,7 +4,7 @@ class Car:
         self.speed = speed
         self.color = color
         self.name = name
-        self.is_police = False
+        self._is_police = False
         self.actual_speed = 0
 
     def go(self):
@@ -34,7 +34,7 @@ class Car:
             return print(f'Машина {self.name}, стоит, скорость: 0 км/час')
 
     def police_or_not(self):
-        if self.is_police:
+        if self._is_police:
             return print(f'Машина {self.name}, является служебной')
         else:
             return print(f'Машина {self.name}, не является служебной')
@@ -78,7 +78,7 @@ class WorkCar(Car):
 class PoliceCar(Car):
     def __init__(self, speed: int, color: str, name: str):
         super(PoliceCar, self).__init__(speed, color, name)
-        self.is_police = True
+        self._is_police = True
 
 
 town_car = TownCar(61, "Red", 'WW_Golf')
