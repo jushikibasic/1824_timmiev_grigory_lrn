@@ -16,7 +16,15 @@ class Car:
 
     def turn(self, direction: str):
         if self.actual_speed > 0:
-            print(f'Машина {self.name}, повернула на {direction}')
+            direction = direction.lower()
+            if direction == 'left':
+                side = 'лево'
+                print(f'Машина {self.name}, повернула на {side}')
+            elif direction == 'right':
+                side = 'право'
+                print(f'Машина {self.name}, повернула на {side}')
+            else:
+                print('такое направление поворота отсутствует, принимаются аргументы  "left" или "right"')
         else:
             print(f'Машина {self.name}: стоит, начните движение')
 
