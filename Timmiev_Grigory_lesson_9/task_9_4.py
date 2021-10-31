@@ -1,5 +1,4 @@
 class Car:
-
     def __init__(self, speed: int, color: str, name: str):
         self.speed = speed
         self.color = color
@@ -9,70 +8,57 @@ class Car:
 
     def go(self):
         self.actual_speed = self.speed
-        return print(f'Машина {self.name}, поехала')
+        print(f'Машина {self.name}, поехала')
 
     def stop(self):
         self.actual_speed -= self.speed
-        return print(f'Машина {self.name}, остановилась')
+        print(f'Машина {self.name}, остановилась')
 
-    def turn_left(self):
+    def turn(self, direction: str):
         if self.actual_speed > 0:
-            return print(f'Машина {self.name}, повернула на лево')
+            print(f'Машина {self.name}, повернула на {direction}')
         else:
-            return print(f'Машина {self.name}: стоит, начните движение')
-
-    def turn_right(self):
-        if self.actual_speed > 0:
-            return print(f'Машина {self.name}, повернула на право')
-        else:
-            return print(f'Машина {self.name}: стоит, начните движение')
+            print(f'Машина {self.name}: стоит, начните движение')
 
     def show_speed(self):
         if self.actual_speed > 0:
-            return print(f'Машина {self.name}, едет со скоростью:{self.actual_speed} км/час')
+            print(f'Машина {self.name}, едет со скоростью:{self.actual_speed} км/час')
         if self.actual_speed == 0:
-            return print(f'Машина {self.name}, стоит, скорость: 0 км/час')
+            print(f'Машина {self.name}, стоит, скорость: 0 км/час')
 
     def police_or_not(self):
         if self._is_police:
-            return print(f'Машина {self.name}, является служебной')
+            print(f'Машина {self.name}, является служебной')
         else:
-            return print(f'Машина {self.name}, не является служебной')
+            print(f'Машина {self.name}, не является служебной')
 
 
 class TownCar(Car):
-    def __init__(self, speed: int, color: str, name: str):
-        super(TownCar, self).__init__(speed, color, name)
-
     def show_speed(self):
         if 0 < self.actual_speed <= 60:
-            return print(f'Машина {self.name}, едет со скоростью:{self.actual_speed} км/час')
+            print(f'Машина {self.name}, едет со скоростью:{self.actual_speed} км/час')
         if self.actual_speed > 60:
-            return print(f'Превышение скорости {self.name}!\n'
-                         f'Разрешенная скорость для класса {self.__class__.__name__}: 60 км/час\n'
-                         f'Актуальная скорость: {self.actual_speed} км/час')
+            print(f'Превышение скорости {self.name}!\n'
+                  f'Разрешенная скорость для класса {self.__class__.__name__}: 60 км/час\n'
+                  f'Актуальная скорость: {self.actual_speed} км/час')
         if self.actual_speed == 0:
-            return print(f'Машина {self.name}, стоит, скорость: 0 км/час')
+            print(f'Машина {self.name}, стоит, скорость: 0 км/час')
 
 
 class SportCar(Car):
-    def __init__(self, speed: int, color: str, name: str):
-        super(SportCar, self).__init__(speed, color, name)
+    pass
 
 
 class WorkCar(Car):
-    def __init__(self, speed: int, color: str, name: str):
-        super(WorkCar, self).__init__(speed, color, name)
-
     def show_speed(self):
         if 0 < self.actual_speed <= 40:
-            return print(f'Машина {self.name}, едет со скоростью:{self.actual_speed} км/час')
+            print(f'Машина {self.name}, едет со скоростью:{self.actual_speed} км/час')
         if self.actual_speed > 40:
-            return print(f'Превышение скорости {self.name}!\n'
-                         f'Разрешенная скорость для класса {self.__class__.__name__}: 40 км/час\n'
-                         f'Актуальная скорость: {self.actual_speed} км/час')
+            print(f'Превышение скорости {self.name}!\n'
+                  f'Разрешенная скорость для класса {self.__class__.__name__}: 40 км/час\n'
+                  f'Актуальная скорость: {self.actual_speed} км/час')
         if self.actual_speed == 0:
-            return print(f'Машина {self.name}, стоит, скорость: 0 км/час')
+            print(f'Машина {self.name}, стоит, скорость: 0 км/час')
 
 
 class PoliceCar(Car):
@@ -93,8 +79,8 @@ town_car.stop()
 work_car.go()
 work_car.show_speed()
 town_car.show_speed()
-sport_car.turn_left()
-sport_car.turn_right()
+sport_car.turn('left')
+sport_car.turn('right')
 town_car.police_or_not()
 sport_car.police_or_not()
 work_car.police_or_not()
