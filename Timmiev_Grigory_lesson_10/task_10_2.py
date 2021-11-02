@@ -8,3 +8,32 @@
 # Выполнить общий подсчёт расхода ткани. Проверить на практике полученные на этом уроке
 # знания. Реализовать абстрактные классы для основных классов проекта и проверить работу
 # декоратора @property.
+from abc import ABC, abstractmethod
+
+
+class Material(ABC):
+    pass
+
+
+class Clothes(Material):
+    @abstractmethod
+    def sum_of_math(self):
+        pass
+
+
+class Coat(Clothes):
+    def __init__(self, value):
+        self.v = value
+
+    def sum_of_math(self):
+        res = (self.v / 6.5 + 0.5)
+        return res
+
+
+class Jacket(Clothes):
+    def __init__(self, high):
+        self.h = high
+
+    def sum_of_math(self):
+        res = (2 * self.h + 0.3)
+        return res
