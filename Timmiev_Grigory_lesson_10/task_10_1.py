@@ -28,6 +28,4 @@ a = Matrix(list_1)
 b = Matrix(list_2)
 print(a)
 print(b)
-
-res = a + b
-print(res)
+print(a + b)
