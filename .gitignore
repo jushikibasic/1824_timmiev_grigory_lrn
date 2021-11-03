@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/Timmiev_Grigoriy_lesson_7/my_project/
