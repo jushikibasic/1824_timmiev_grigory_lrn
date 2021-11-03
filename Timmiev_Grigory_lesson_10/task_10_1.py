@@ -1,6 +1,3 @@
-from itertools import zip_longest
-# Реализовать класс Matrix (матрица). Обеспечить перегрузку конструктора класса (метод
-# __init__()), который должен принимать данные (список списков) для формирования матрицы.
 list_1 = [[10, 2, 3], [3, 5, 6]]
 list_2 = [[20, 4, 6], [6, 10, 12]]
 
@@ -18,13 +15,13 @@ class Matrix:
     def __add__(self, other):
         if not isinstance(other, Matrix):
             raise TypeError(f'{other} not  a Matrix class')
-        if len(self.line) == len(other.line):
-            result = []
-            for i in range(len(self.line)):
-                if len(self.line[i]) == len(other.line[i]):
-                    result.append([x + y for x, y in zip_longest(self.line[i], other.line[i])])
-            new = Matrix(result)
-            return new
+        if not len(self.line) == len(other.line):
+            raise SystemExit('Матрицы должны быть подобны')
+        result = []
+        for i in range(len(self.line)):
+            result.append([x + y for x, y in zip(self.line[i], other.line[i])])
+        new = Matrix(result)
+        return new
 
 
 a = Matrix(list_1)
