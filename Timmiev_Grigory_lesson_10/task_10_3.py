@@ -23,7 +23,7 @@ class Cell:
         return Cell(self.cells * other.cells)
 
     def __floordiv__(self, other):
-        """целочмсленное"""
+        """целочисленное"""
         if not isinstance(other, Cell):
             raise TypeError(f'{other} not a Cell class')
         return Cell(self.cells // other.cells)
