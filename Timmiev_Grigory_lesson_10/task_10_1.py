@@ -9,7 +9,7 @@ class Matrix:
     def __str__(self):
         i = ''
         for item in self.line:
-            i += ''.join(f'{item}\n')
+            i += f'{item}\n'
         return i
 
     def __add__(self, other):
