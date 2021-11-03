@@ -1,25 +1,54 @@
-# Осуществить программу работы с органическими клетками, состоящими из ячеек. Необходимо
-# создать класс «Клетка». В его конструкторе инициализировать параметр, соответствующий
-# количеству ячеек клетки (целое число). В классе должны быть реализованы методы
-# перегрузки арифметических операторов: сложение (__add__()), вычитание (__sub__()),
-# умножение (__mul__()), деление (__floordiv____truediv__()). Эти методы должны применяться
-# только к клеткам и выполнять увеличение, уменьшение, умножение и округление до целого
-# числа деления клеток соответственно.
-# Сложение. Объединение двух клеток. При этом число ячеек общей клетки должно равняться
-# сумме ячеек исходных двух клеток.
-# Вычитание. Участвуют две клетки. Операцию необходимо выполнять, только если разность
-# количества ячеек двух клеток больше нуля, иначе выводить соответствующее сообщение.
-# Умножение. Создаётся общая клетка из двух. Число ячеек общей клетки — произведение
-# количества ячеек этих двух клеток.
-# Деление. Создаётся общая клетка из двух. Число ячеек общей клетки определяется как
-# целочисленное деление количества ячеек этих двух клеток.
-# В классе необходимо реализовать метод make_order(), принимающий экземпляр класса и
-# количество ячеек в ряду. Этот метод позволяет организовать ячейки по рядам.
-# Метод должен возвращать строку вида *****\n*****\n*****..., где количество ячеек между \n
-# равно переданному аргументу. Если ячеек на формирование ряда не хватает, то в последний
-# ряд записываются все оставшиеся.
-# Например, количество ячеек клетки равняется 12, а количество ячеек в ряду — 5. В этом
-# случае метод make_order() вернёт строку: *****\n*****\n**.
-# Или количество ячеек клетки — 15, а количество ячеек в ряду равняется 5. Тогда метод
-# make_order() вернёт строку: *****\n*****\n*****.
-# Подсказка: подробный список операторов для перегрузки доступен по ссылке.
+class Cell:
+    def __init__(self, cell_numbs: int):
+        self.cells = cell_numbs
+
+    def __str__(self):
+        return f'в данной клетке: {self.cells} ячеек'
+
+    def __add__(self, other):
+        if not isinstance(other, Cell):
+            raise TypeError(f'{other} not  a Cell class')
+        return Cell(self.cells + other.cells)
+
+    def __sub__(self, other):
+        if not isinstance(other, Cell):
+            raise TypeError(f'{other} not a Cell class')
+        if not self.cells - other.cells > 0:
+            print('разность клеток 0 или меньше')
+        return Cell(self.cells - other.cells)
+
+    def __mul__(self, other):
+        if not isinstance(other, Cell):
+            raise TypeError(f'{other} not a Cell class')
+        return Cell(self.cells * other.cells)
+
+    def __floordiv__(self, other):
+        """целочмсленное"""
+        if not isinstance(other, Cell):
+            raise TypeError(f'{other} not a Cell class')
+        return Cell(self.cells // other.cells)
+
+    def __truediv__(self, other):
+        if not isinstance(other, Cell):
+            raise TypeError(f'{other} not a Cell class')
+        return Cell(self.cells / other.cells)
+
+    def make_order(self, n):
+        lines = self.cells // n
+        rest = self.cells % n
+        result = ''
+        for i in range(lines):
+            result += f'{chr(42) * n }\n'
+        result += f'{chr(42) * rest}\n'
+        return result
+
+
+cell = Cell(15)
+a = Cell(10)
+b = Cell(3)
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a // b)
+print(cell.make_order(5))
