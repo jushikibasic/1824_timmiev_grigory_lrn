@@ -31,7 +31,7 @@ class Cell:
     def __truediv__(self, other):
         if not isinstance(other, Cell):
             raise TypeError(f'{other} not a Cell class')
-        return Cell(self.cells / other.cells)
+        return Cell(int(self.cells / other.cells))
 
     def make_order(self, n):
         lines = self.cells // n
