@@ -1,8 +1,8 @@
+from itertools import zip_longest
 # Реализовать класс Matrix (матрица). Обеспечить перегрузку конструктора класса (метод
 # __init__()), который должен принимать данные (список списков) для формирования матрицы.
 list_1 = [[10, 2, 3], [3, 5, 6]]
-# pos = [i for i in range(len(list_in))]
-# for item in pos:
+list_2 = [[20, 4, 6], [6, 10, 12]]
 
 
 class Matrix:
@@ -10,13 +10,27 @@ class Matrix:
         self.line = list_in
 
     def __str__(self):
-        # res = [i for i in self.line]
+        i = ''
         for item in self.line:
-            i = "\n".join(str(item))
+            i += ''.join(f'{item}\n')
         return i
+
+    def __add__(self, other):
+        if not isinstance(other, Matrix):
+            raise TypeError(f'{other} not  a Matrix class')
+        if len(self.line) == len(other.line):
+            result = []
+            for i in range(len(self.line)):
+                if len(self.line[i]) == len(other.line[i]):
+                    result.append([x + y for x, y in zip_longest(self.line[i], other.line[i])])
+            new = Matrix(result)
+            return new
 
 
 a = Matrix(list_1)
-#for bottle in our_bottles:
-print(f'\t{a}')
-# a.show()
+b = Matrix(list_2)
+print(a)
+print(b)
+
+res = a + b
+print(res)
