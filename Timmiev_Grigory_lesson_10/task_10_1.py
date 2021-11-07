@@ -10,7 +10,7 @@ class Matrix:
         i = ''
         for item in self.line:
             for items in item:
-                i += f'{items} '
+                i += f'{items}\t'
             i += f'\n'
         return i
 
