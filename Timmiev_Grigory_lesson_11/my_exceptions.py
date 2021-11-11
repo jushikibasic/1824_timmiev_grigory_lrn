@@ -35,3 +35,7 @@ class ZeroDivExcept(MyEx):
 
 class MyValEr(MyEx):
     _default_detail: str = 'Допускаются только числа'
+
+
+class NotAComplex(MyEx):
+    _default_detail = str = 'Не комплексное число'
